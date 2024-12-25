@@ -6,7 +6,6 @@ import com.spring.dto.RestaurantDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -27,7 +26,6 @@ public class User {
 
     private String password;
 
-    @Getter
     private USER_ROLE role=USER_ROLE.ROLE_CUSTOMER;
 
     @JsonIgnore
@@ -39,6 +37,4 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Address> addresses= new ArrayList<>();
-
-
 }
